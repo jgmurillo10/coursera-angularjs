@@ -3,9 +3,10 @@
 
 angular.module('MsgApp', [])
 .controller('MsgController', MsgController)
-.filter('vowels', CustomFilterFactory);
+.filter('vowels', CustomFilterFactory)
+.filter('loves', LovesFilter);
 
-MsgController.$inject = ['$scope', 'vowelsFilter'];
+MsgController.$inject = ['$scope', 'vowelsFilter', 'lovesFilter'];
 function MsgController($scope, vowelsFilter) {
   $scope.stateOfBeing = "hungry";
 
@@ -13,6 +14,11 @@ function MsgController($scope, vowelsFilter) {
     var msg = "Yaakov likes to eat healthy snacks at night!";
     
     return vowelsFilter(msg);
+  };
+    $scope.sayLovesMessage = function () {
+    var msg = "Yaakov likes to eat healthy snacks at night!";
+    
+    return lovesFilter(msg);
   };
 
   $scope.feedYaakov = function () {
@@ -41,6 +47,13 @@ function CustomFilterFactory (){
 		// }
 		return output;
 	}
+}
+function LovesFilter () {
+	return function (input) {
+		input = input || "";
+		input = input.replace('likes', 'loves');
+		return input;
+	};
 }
 
 })();
