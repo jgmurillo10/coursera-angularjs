@@ -7,7 +7,7 @@ angular.module('MsgApp', [])
 .filter('loves', LovesFilter);
 
 MsgController.$inject = ['$scope', 'vowelsFilter', 'lovesFilter'];
-function MsgController($scope, vowelsFilter) {
+function MsgController($scope, vowelsFilter, lovesFilter) {
   $scope.stateOfBeing = "hungry";
 
   $scope.sayMessage = function () {
