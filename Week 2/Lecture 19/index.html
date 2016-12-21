@@ -15,6 +15,8 @@
     </div>
 
     <div ng-controller='ParentController2 as parent'>
+
+      <input type="text" ng-model="parent.value">
       Parent value: {{ parent.value }}
 
       <div ng-controller='ChildController2 as child'>

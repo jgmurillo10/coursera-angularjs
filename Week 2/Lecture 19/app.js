@@ -43,7 +43,7 @@ ChildController2.$inject = ['$scope'];
 function ChildController2($scope) {
   var child = this;
   child.value = 5;
-  // console.log("ChildController2 $scope: ", $scope);
+  console.log("ChildController2 $scope: ", $scope);
 }
 
 })();
