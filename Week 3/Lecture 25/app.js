@@ -53,7 +53,7 @@ function MenuCategoriesService($http, ApiBasePath) {
   //   return response;
   // };
   service.getMenuCategories = function () {
-    var response = $http({
+    var response = $http({ 
       method: "GET",
       url: (ApiBasePath + "/categories.json")
     });
