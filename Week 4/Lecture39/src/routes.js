@@ -30,7 +30,6 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       }]
     }
   })
-
   .state('itemDetail', {
     url: '/item-detail/{itemId}',
     templateUrl: 'src/shoppinglist/templates/item-detail.template.html',

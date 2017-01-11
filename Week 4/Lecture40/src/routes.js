@@ -30,20 +30,17 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       }]
     }
   })
-  .state('itemDetail', {
-    url: '/item-detail/{itemId}',
+
+  // Item detail
+  .state('mainList.itemDetail', {
+    // url: '/item-detail/{itemId}',
     templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
-    controller: 'ItemDetailController as itemdetail',
-    resolve: {
-      item: ['$stateParams', 'ShoppingListService', 
-          function ($stateParams, ShoppingListService) {
-              return ShoppingListService.getItems()
-              .then(function (items) {
-                      return items[$stateParams.itemId];
-                    });
-          }]
+    controller: 'ItemDetailController as itemDetail',
+    params: {
+      itemId: null
     }
   });
+
 }
 
 })();
