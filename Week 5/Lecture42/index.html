@@ -52,7 +52,7 @@
       </form>
     </fieldset>
 
-    <div id="info" ng-if="reg.completed">
+    <div id="info" ng-if="!regForm.$invalid">
       Username: {{ reg.user.username}} <br>
       Email: {{ reg.user.email}} <br>
       Phone: {{ reg.user.phone }}
